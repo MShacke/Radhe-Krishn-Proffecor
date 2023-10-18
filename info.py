@@ -33,11 +33,11 @@ PICS = (environ.get('PICS' ,'https://graph.org/file/01ddfcb1e8203879a63d7.jpg ht
 BOT_START_TIME = time()
 
 # Admins, Channels & Users
-ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '622730585 1003337276').split()]
+ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ.get('ADMINS', '0').split()]
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
-auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '622730585 1003337276').split()]
+auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '0').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
-auth_channel = environ.get('AUTH_CHANNEL','-1001641011626')
+auth_channel = environ.get('AUTH_CHANNEL','')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
 AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
@@ -49,12 +49,12 @@ COLLECTION_NAME = environ.get('COLLECTION_NAME', 'Telegram_files')
 
 #maximum search result buttos count in number#
 MAX_RIST_BTNS = int(environ.get('MAX_RIST_BTNS', "10"))
-START_MESSAGE = environ.get('START_MESSAGE', '👋 𝙷𝙴𝙻𝙾 {user}\n\n𝙼𝚈 𝙽𝙰𝙼𝙴 𝙸𝚂 {bot},\n𝙸 𝙲𝙰𝙽 𝙿𝚁𝙾𝚅𝙸𝙳𝙴 𝙼𝙾𝚅𝙸𝙴𝚂, 𝙹𝚄𝚂𝚃 𝙰𝙳𝙳 𝙼𝙴 𝚃𝙾 𝚈𝙾𝚄𝚁 𝙶𝚁𝙾𝚄𝙿 𝙰𝙽𝙳 𝙼𝙰𝙺𝙴 𝙼𝙴 𝙰𝙳𝙼𝙸𝙽...')
-BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "𝙃𝙚𝙮 {𝙦𝙪𝙚𝙧𝙮}! \n🥴 यह किसी और के द्वारा की गई मूवी रिक्वेस्ट है। कृपया खुद से मूवी रिक्वेस्ट करें। 🙏\n𝙏𝙝𝙞𝙨 𝙞𝙨 𝙣𝙤𝙩 𝙮𝙤𝙪𝙧 𝙧𝙚𝙦𝙪𝙚𝙨𝙩𝙚𝙙 𝙈𝙤𝙫𝙞𝙚 \n𝙋𝙡𝙚𝙖𝙨𝙚 𝙧𝙚𝙦𝙪𝙚𝙨𝙩 𝙮𝙤𝙪𝙧 𝙤𝙬𝙣 😎")
-FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', '𝙅𝙤𝙞𝙣 𝙊𝙪𝙧 𝙈𝙤𝙫𝙞𝙚𝙨 𝙐𝙥𝙙𝙖𝙩𝙚 𝘾𝙝𝙖𝙣𝙣𝙚𝙡 𝙏𝙤 𝙐𝙨𝙚 𝙏𝙝𝙞𝙨 𝘽𝙤𝙩.! \n𝙏𝙝𝙚𝙣 𝘾𝙡𝙞𝙘𝙠 𝙤𝙣 🔄 𝙩𝙧𝙮 𝘼𝙜𝙖𝙞𝙣 𝘽𝙪𝙩𝙩𝙤𝙣.\nमूवीज डाउनलोड करने के लिए कृपया हमारे अपडेट चैनल को ज्वॉइन कीजिए 🙏 \nफिर 🔄 𝙩𝙧𝙮 𝙖𝙜𝙖𝙞𝙣 पर क्लिक करें और अपनी मूवीज प्राप्त करें।')
+START_MESSAGE = environ.get('START_MESSAGE', '👋 𝐇𝐞𝐥𝐥𝐨 {user}\n\n𝐈 𝐂𝐚𝐧 𝐏𝐫𝐨𝐯𝐢𝐝𝐞 𝐌𝐨𝐯𝐢𝐞𝐬 𝐉𝐮𝐬𝐭 𝐀𝐝𝐝 𝐌𝐞 𝐓𝐨 𝐘𝐨𝐮𝐫 𝐆𝐫𝐨𝐮𝐩 𝐀𝐧𝐝 𝐌𝐚𝐤𝐞 𝐌𝐞 𝐀𝐝𝐦𝐢𝐧.....')
+BUTTON_LOCK_TEXT = environ.get("BUTTON_LOCK_TEXT", "𝐎𝐲𝐞 {𝙦𝙪𝙚𝙧𝙮}! \n𝐑𝐞𝐪𝐮𝐞𝐬𝐭 𝐘𝐨𝐮𝐫 𝐎𝐰𝐧 𝐌𝐨𝐯𝐢𝐞 🎥")
+FORCE_SUB_TEXT = environ.get('FORCE_SUB_TEXT', '𝐉𝐨𝐢𝐧 𝐌𝐲 𝐌𝐨𝐯𝐢𝐞 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥 𝐓𝐨 𝐔𝐬𝐞 𝐌𝐞 🥳')
 RemoveBG_API = environ.get("RemoveBG_API", "")
 WELCOM_PIC = environ.get("WELCOM_PIC", "https://graph.org/file/d69995d9846fd4ad632b8.jpg")
-WELCOM_TEXT = environ.get("WELCOM_TEXT", "👋 𝙃𝙚𝙮 {user} \n𝙬𝙚𝙡𝙘𝙤𝙢𝙚 𝙩𝙤 {chat}🌹\nकिसी भी फिल्म के लिए रिक्वेस्ट करें हम इसे मुफ्त में प्रदान करेंगे 💯 बस ग्रुप में मूवी का नाम मैसेज करें और तुरंत फाइल प्रोवा इडर  द्वारा डाउनलोडिंग लिंक प्राप्त करें। \nRead pinned message for Group rules")
+WELCOM_TEXT = environ.get("WELCOM_TEXT", "👋 𝐎𝐲𝐞 {user} \n𝐖𝐞𝐥𝐥𝐜𝐨𝐦𝐞 𝐓𝐨 {chat}🌹\n\n𝐒𝐞𝐧𝐝 𝐌𝐞 𝐌𝐨𝐯𝐢𝐞 𝐍𝐚𝐦𝐞 𝐀𝐧𝐝 𝐓𝐡𝐚𝐭 𝐌𝐨𝐯𝐢𝐞 🎥😁")
 PMFILTER = is_enabled(environ.get('PMFILTER', "True"), True)
 G_FILTER = is_enabled(environ.get("G_FILTER", "True"), True)
 BUTTON_LOCK = is_enabled(environ.get("BUTTON_LOCK", "False"), False)
@@ -65,20 +65,20 @@ SHORT_API = environ.get("SHORT_API")
 
 # Others
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
-LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1001960020398'))
-SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'spshah878')
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '0'))
+SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'MS_Movvis')
 P_TTI_SHOW_OFF = is_enabled(environ.get('P_TTI_SHOW_OFF', "False"), False)
 PM_IMDB = is_enabled(environ.get('PM_IMDB', "False"), False)
 IMDB = is_enabled(environ.get('IMDB', "False"), False)
 SINGLE_BUTTON = is_enabled(environ.get('SINGLE_BUTTON', "True"), True)
-CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "▪️ 𝐅𝐢𝐥𝐞 𝐧𝐚𝐦𝐞 : {file_name}\n▪️ 𝐅𝐢𝐥𝐞 𝐒𝐢𝐳𝐞 : {file_size}\n_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳\n🔰 𝗣𝗹𝗲𝗮𝘀𝗲 𝘀𝘂𝗽𝗽𝗼𝗿𝘁 𝘂𝘀 𝗯𝘆 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗶𝗻𝗴 𝘁𝗼 𝗼𝘂𝗿 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗰𝗵𝗮𝗻𝗻𝗲𝗹 𝘁𝗼 𝗴𝗲𝘁 𝗳𝗿𝗲𝗲 𝗺𝗼𝘃𝗶𝗲𝘀. 𝗜𝘁 𝘄𝗶𝗹𝗹 𝗼𝗻𝗹𝘆 𝘁𝗮𝗸𝗲 𝘆𝗼𝘂 𝟭𝟬 𝘀𝗲𝗰𝗼𝗻𝗱𝘀 🥰\n_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳\n🔰 मुफ्त में मूवीज प्राप्त करने हेतु कृपया हमारे यूट्यूब चैनल को सब्सक्राइब कर के हमरा सपोर्ट करें । इसमें सिर्फ आपका 10 सेकंड लगेगा। 🥰\n_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳_̳\n🔰 𝗢𝘂𝗿 𝗬𝗼𝘂𝗧𝘂𝗯𝗲 𝗖𝗵𝗮𝗻𝗻𝗲𝗹 👇\n╭────────•◆•──────➤\n•❰😋https://tapthe.link/Pavbhaji ❱•\n•❰😋https://tapthe.link/Pavbhaji ❱•\n•❰😋https://tapthe.link/Pavbhaji ❱•\n╰────────•◆•──────➤")
+CUSTOM_FILE_CAPTION = environ.get("CUSTOM_FILE_CAPTION", "🗄️ ᴍᴏᴠɪᴇ : {file_name}\n\n🥀 sɪᴢᴇ : {file_size}")
 BATCH_FILE_CAPTION = environ.get("BATCH_FILE_CAPTION", None)
-IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>Query: {query}</b> \n‌IMDb Data:\n\n🏷 Title: <a href={url}>{title}</a>\n🎭 Genres: {genres}\n📆 Year: <a href={url}/releaseinfo>{year}</a>\n🌟 Rating: <a href={url}/ratings>{rating}</a> / 10")
+IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", "<b>📛 𝐍𝐚𝐦𝐞 : {query}</b> \n‌\n🏷 𝐓𝐢𝐭𝐥𝐞 : <a href={url}>{title}</a>\n🎭 𝐆𝐞𝐧𝐫𝐞𝐬 : {genres}\n📆 𝐑𝐞𝐥𝐞𝐚𝐬𝐞 : <a href={url}/releaseinfo>{year}</a>\n🌟 𝐑𝐚𝐭𝐢𝐧𝐠 : <a href={url}/ratings>{rating}</a> / 10")
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
 INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
-FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1001986679862')).split()]
+FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', LOG_CHANNEL)).split()]
 MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "True"), True)
 PROTECT_CONTENT = is_enabled(environ.get('PROTECT_CONTENT', "False"), False)
 PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "True"), True)
