@@ -42,6 +42,7 @@ ADMINS = [int(admin) if id_pattern.search(admin) else admin for admin in environ
 CHANNELS = [int(ch) if id_pattern.search(ch) else ch for ch in environ.get('CHANNELS', '0').split()]
 auth_users = [int(user) if id_pattern.search(user) else user for user in environ.get('AUTH_USERS', '0').split()]
 AUTH_USERS = (auth_users + ADMINS) if auth_users else []
+PREMIUM_USER = [int(user) if id_pattern.search(user) else user for user in environ.get('PREMIUM_USER', '6433510598').split()]
 auth_channel = environ.get('AUTH_CHANNEL','')
 auth_grp = environ.get('AUTH_GROUP')
 AUTH_CHANNEL = int(auth_channel) if auth_channel and id_pattern.search(auth_channel) else None
@@ -69,6 +70,20 @@ SHORT_URL = environ.get("SHORT_URL")
 SHORT_API = environ.get("SHORT_API")
 
 # Others
+VERIFY = bool(environ.get('VERIFY', False))
+SHORTLINK_URL = environ.get('SHORTLINK_URL', 'ziplinker.net')
+SHORTLINK_API = environ.get('SHORTLINK_API', 'b13a8022cb09d3a1dd7b40f251e5cc306099dfb4')
+SECOND_SHORTLINK_URL = environ.get('SECOND_SHORTLINK_URL', 'ziplinker.net')
+SECOND_SHORTLINK_API = environ.get('SECOND_SHORTLINK_API', 'b13a8022cb09d3a1dd7b40f251e5cc306099dfb4')
+IS_SHORTLINK = bool(environ.get('IS_SHORTLINK', True))
+DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
+MAX_B_TN = environ.get("MAX_B_TN", "5")
+MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
+GRP_LNK = environ.get('GRP_LNK', 'https://t.me/+z2b3yBUUMf80NWVl')
+CHNL_LNK = environ.get('CHNL_LNK', 'https://t.me/Thunnder_Bot')
+TUTORIAL = environ.get('TUTORIAL', 'https://t.me/MS_Mihir/17')
+IS_TUTORIAL = bool(environ.get('IS_TUTORIAL', True))
+MSG_ALRT = environ.get('MSG_ALRT', 'ᴡᴀɪᴛ ɪ ᴀᴍ ꜱʟɪɢʜᴛʟʏ ʙᴜꜱʏ')
 IMDB_DELET_TIME = int(environ.get('IMDB_DELET_TIME', "300"))
 LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '0'))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT', 'MS_Movvis')
@@ -87,6 +102,8 @@ FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '0'))
 MELCOW_NEW_USERS = is_enabled(environ.get('MELCOW_NEW_USERS', "True"), True)
 PROTECT_CONTENT = is_enabled(environ.get('PROTECT_CONTENT', "False"), False)
 PUBLIC_FILE_STORE = is_enabled(environ.get('PUBLIC_FILE_STORE', "True"), True)
+AUTO_FFILTER = is_enabled((environ.get('AUTO_FFILTER', "True")), True)
+AUTO_DELETE = is_enabled((environ.get('AUTO_DELETE', "True")), True)
 
 
 
@@ -105,4 +122,12 @@ SEASONS = ["season 1" , "season 2" , "season 3" , "season 4", "season 5" , "seas
 
 
 
-
+LOG_STR = "Current Cusomized Configurations are:-\n"
+LOG_STR += ("IMDB Results are enabled, Bot will be showing imdb details for you queries.\n" if IMDB else "IMBD Results are disabled.\n")
+LOG_STR += ("P_TTI_SHOW_OFF found , Users will be redirected to send /start to Bot PM instead of sending file file directly\n" if P_TTI_SHOW_OFF else "P_TTI_SHOW_OFF is disabled files will be send in PM, instead of sending start.\n")
+LOG_STR += ("SINGLE_BUTTON is Found, filename and files size will be shown in a single button instead of two separate buttons\n" if SINGLE_BUTTON else "SINGLE_BUTTON is disabled , filename and file_sixe will be shown as different buttons\n")
+LOG_STR += (f"CUSTOM_FILE_CAPTION enabled with value {CUSTOM_FILE_CAPTION}, your files will be send along with this customized caption.\n" if CUSTOM_FILE_CAPTION else "No CUSTOM_FILE_CAPTION Found, Default captions of file will be used.\n")
+LOG_STR += ("Long IMDB storyline enabled." if LONG_IMDB_DESCRIPTION else "LONG_IMDB_DESCRIPTION is disabled , Plot will be shorter.\n")
+LOG_STR += ("Spell Check Mode Is Enabled, bot will be suggesting related movies if movie not found\n" if SPELL_CHECK_REPLY else "SPELL_CHECK_REPLY Mode disabled\n")
+LOG_STR += (f"MAX_LIST_ELM Found, long list will be shortened to first {MAX_LIST_ELM} elements\n" if MAX_LIST_ELM else "Full List of casts and crew will be shown in imdb template, restrict them by adding a value to MAX_LIST_ELM\n")
+LOG_STR += f"Your current IMDB template is {IMDB_TEMPLATE}"
