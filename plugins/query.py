@@ -590,7 +590,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('🔭 ꜱᴛᴀᴛᴜꜱ 📊', callback_data='source')
+            InlineKeyboardButton('⚡ ᴍʏ ᴇɴᴇʀɢʏ ⚡', callback_data='source')
             ],[
             InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start')
         ]]
@@ -612,9 +612,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "owner_hun":
         buttons = [[
-            InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start')
-            ],[
             InlineKeyboardButton('📞 ᴄᴏɴᴛᴀᴄᴛ 🐍', url='https://t.me/MS_Contact_RoBot')
+            ],[
+            InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.edit_message_media(
@@ -625,7 +625,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         buttons = [[
             InlineKeyboardButton('🔮 ᴜᴘᴅᴀᴛᴇ ᴄʜᴀɴɴᴇʟ 🔮', url='https://t.me/MS_Movvies')
             ],[
-            InlineKeyboardButton('ɢʀᴏᴜᴘ', url='https://t.me/+jphAq_IjQLkyZGVl')
+            InlineKeyboardButton('🗞 ɢʀᴏᴜᴘ 🗞', url='https://t.me/+jphAq_IjQLkyZGVl')
         ],[
             InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start'),
             InlineKeyboardButton('📞 ᴄᴏɴᴛᴀᴄᴛ 🐍', url='https://t.me/MS_Contact_RoBot')
