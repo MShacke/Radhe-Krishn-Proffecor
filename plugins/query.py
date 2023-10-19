@@ -596,10 +596,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('𝙵𝙾𝙽𝙳', callback_data='fond'),
             InlineKeyboardButton('𝚈𝚃-𝙳𝙻', callback_data='ytdl')
             ],[
-            InlineKeyboardButton('🔮 𝚂𝚃𝙰𝚃𝚄𝚂 🔮', callback_data='stats')
-            ],[
-            InlineKeyboardButton('🔒 ᴄʟᴏꜱᴇ 🔒', callback_data='close_data'),
-            InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start')           
+            InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start'),
+            InlineKeyboardButton('🔭 ꜱᴛᴀᴛᴜꜱ 📊', callback_data='stats')            
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)             
         await query.edit_message_media(  
@@ -608,10 +606,9 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "about":
         buttons= [[
-            InlineKeyboardButton('❣️ 𝚂𝙾𝚄𝚁𝙲𝙴 𝙲𝙾𝙳𝙴 ❣️', callback_data='source')
+            InlineKeyboardButton('🔭 ꜱᴛᴀᴛᴜꜱ 📊', callback_data='source')
             ],[
-            InlineKeyboardButton('🏠 𝙷𝙾𝙼𝙴', callback_data='start'),
-            InlineKeyboardButton('🔒 ᴄʟᴏꜱᴇ 🔒', callback_data='close_data')
+            InlineKeyboardButton('❰ ʙᴀᴄᴋ', callback_data='start')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)        
         await query.edit_message_media(
